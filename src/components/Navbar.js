@@ -22,7 +22,7 @@ export default function Navbar() {
                 <a className="nav-link" href="#">Jotain</a>
               </li>
             </ul>
-            {/* toimiiko tässä nyt ostoskori? */}
+            {/* Tämä osa pitänee jättää tänne tai johonkin, jos navia muuttaa*/}
             <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Cart/>
