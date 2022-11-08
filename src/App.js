@@ -3,6 +3,9 @@ import React,{useState,useEffect} from 'react';
 import {Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Products from './pages/Products';
 
 
 function App() {
@@ -10,10 +13,11 @@ function App() {
     <>
       <Navbar/>
       <div className='container'>
-        <h2>Tähän jotain sisältöä</h2>
-
-
-
+        <Routes>
+            <Route path='/' element= {<Home />}/>
+            <Route path='/products' element= {<Products />}/>
+            <Route path='/about' element= {<About />}/>
+        </Routes>
       </div>
       <Footer/>
     </>
