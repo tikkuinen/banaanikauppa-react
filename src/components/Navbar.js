@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import Cart from './Cart'
 
 export default function Navbar() {
+
+
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -23,11 +26,9 @@ export default function Navbar() {
                 <Link className='nav-link' to='/about'>Tietoa meistä</Link>
               </li>
             </ul>
-            {/* Tämä osa pitänee jättää tänne tai johonkin, jos navia muuttaa*/}
             <ul className='navbar-nav ml-auto'>
             <li className='nav-item'>
               <Cart/> 
-              {/* tai siis ainakin tuo <Cart/> */}
             </li>
             </ul>
 
