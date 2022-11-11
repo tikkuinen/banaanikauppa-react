@@ -9,18 +9,9 @@ import Products from './pages/Products';
 
 
 // tässä pitää olla se omalla koneella oleva polku php-kansioon
-const URL = 'http://localhost/banaanikauppa/';
+const URL = 'http://localhost/webshop2022-master/';
 
 function App() {
-  // ostoskori määritellään täällä tilamuuttujana, jotta sitä voidaan käyttää muissa komponenteissa
-  const [cart, setCart] = useState([]);
-
-  // ja tallennetaan ostoskoria jotenkin
-  function addToCart(product) {
-    const newCart = [...cart.product];
-    setCart(newCart);
-    localStorage.setItem('cart',JSON.stringify(newCart));
-  }
 
   return (
     <>
@@ -28,7 +19,7 @@ function App() {
       <div className='container'>
         <Routes>
             <Route path='/' element= {<Home />}/>
-            <Route path='/products' element= {<Products url={URL} />}/>
+            <Route path='/products/:categoryId' element= {<Products url={URL} />}/>
             <Route path='/about' element= {<About />}/>
         </Routes>
       </div>

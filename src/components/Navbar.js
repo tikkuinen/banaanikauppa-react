@@ -1,10 +1,23 @@
+import axios from 'axios'
 import React from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Cart from './Cart'
+//import Cart from './Cart'
 
-export default function Navbar() {
+export default function Navbar({url}) {
+  const [categories, setCategories] = useState([]);
+  // tulee taulukkona ne kategoriat backista
 
 
+  useEffect(() => {
+    axios.get(url + 'products/getcategories.php')
+      .then((response) => {
+        const json = response.data;
+        setCategories(json);
+      }).catch (error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+      })
+  }, [])
 
   return (
     <>
@@ -19,17 +32,30 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link className='nav-link' to='/'>Etusivu</Link>
               </li>
-              <li className="nav-item">
-                <Link className='nav-link' to='/products'>Tuotteet</Link>
+              {/*  Tuotteet */}
+              <li className='nav-item dropdown'>
+                <a className='nav-link dropdown-toggle' href="#" id="dropdown01" 
+                data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
+                <ul className='dropdown-menu' aria-labelledby='dropdown01'>
+                  {categories.map(category => (
+                    <li key={category.id}>
+                      {<Link 
+                        className='dropdown-item'
+                        to={'/products/' + category.id}>{category.name}
+                      </Link>}
+                    </li>
+                  ))}
+                </ul>
               </li>
               <li className="nav-item">
                 <Link className='nav-link' to='/about'>Tietoa meistä</Link>
               </li>
             </ul>
+            {/* Ostoskori */}
             <ul className='navbar-nav ml-auto'>
-            <li className='nav-item'>
-              <Cart/> 
-            </li>
+              <li className='nav-item'>
+                {/* Tähän tulee se ostoskori */}
+              </li>
             </ul>
 
           </div>

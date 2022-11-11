@@ -1,22 +1,35 @@
 import axios from 'axios';
-import React from 'react'
-import { useEffect, useState } from 'react'
+import React from 'react';
+import {useState,useEffect} from 'react';
+import { Link, useParams } from 'react-router-dom';
 
-export default function Products(url) {
+export default function Products({url}) {
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState('');
 
+  // lukee osoitteesta sen idn
+  let params = useParams();
 
   useEffect(() => {
-    axios.get(url + 'products/getgategories.php/')
+    axios.get(url + 'products/getproducts.php/' + params.categoryId)
       .then((response) => {
         const json = response.data;
-        console.log(json);
+        setCategory(json.category);
+        setProducts(json.products);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
-  }, [])
+  }, [params])
   
-  return (
-    <div>Products</div>
+  return (  
+    <div>
+      <h3>Products {category}</h3>
+      {products.map(product => (
+        <div key={product.id}>
+          {product.name}
+          <button>Osta pois</button>
+        </div>
+      ))}
+    </div>
   )
 }
