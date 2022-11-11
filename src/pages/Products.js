@@ -2,12 +2,12 @@ import axios from 'axios';
 import React from 'react'
 import { useEffect, useState } from 'react'
 
-export default function Products() {
+export default function Products(url) {
   const [products, setProducts] = useState([]);
 
 
   useEffect(() => {
-    axios.get(url + 'products/getproducts.php/')
+    axios.get(url + 'products/getgategories.php/')
       .then((response) => {
         const json = response.data;
         console.log(json);
