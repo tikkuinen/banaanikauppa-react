@@ -2,9 +2,9 @@ import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-//import Cart from './Cart'
+import Cart from './Cart'
 
-export default function Navbar({url}) {
+export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
   // tulee taulukkona ne kategoriat backista
 
@@ -54,7 +54,7 @@ export default function Navbar({url}) {
             {/* Ostoskori */}
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
-                {/* Tähän tulee se ostoskori */}
+                <Cart cart={cart}/>
               </li>
             </ul>
 

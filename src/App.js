@@ -12,14 +12,22 @@ import Products from './pages/Products';
 const URL = 'http://localhost/webshop2022-master/';
 
 function App() {
+  // lifting state up, jotta kaikki voi käyttää alaspäin ostoskorin komponenttia
+  const [cart, setCart] = useState([]);
+
+  function addToCart(product) {
+    const newCart = [...cart,product];
+    setCart(newCart);
+    localStorage.setItem('cart',JSON.stringify(newCart));
+  }
 
   return (
     <>
-      <Navbar url={URL}/>
+      <Navbar url={URL} cart={cart}/>
       <div className='container'>
         <Routes>
             <Route path='/' element= {<Home />}/>
-            <Route path='/products/:categoryId' element= {<Products url={URL} />}/>
+            <Route path='/products/:categoryId' element= {<Products url={URL} addToCart={addToCart} />}/>
             <Route path='/about' element= {<About />}/>
         </Routes>
       </div>

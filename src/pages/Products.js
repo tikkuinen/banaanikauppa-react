@@ -3,7 +3,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-export default function Products({url}) {
+export default function Products({url,addToCart}) {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
 
@@ -27,7 +27,7 @@ export default function Products({url}) {
       {products.map(product => (
         <div key={product.id}>
           {product.name}
-          <button>Osta pois</button>
+          <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta pois</button>
         </div>
       ))}
     </div>
