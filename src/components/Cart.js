@@ -6,9 +6,9 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 export default function Cart({cart}) {
   //console.log(cart.length);
   return (
-    <>
+    <Link to="/order">
       <FontAwesomeIcon icon={faCartShopping} />
       <span style={{}}>{cart.length}</span>
-    </>
+    </Link>
   )
 }
