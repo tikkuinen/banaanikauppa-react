@@ -38,10 +38,10 @@ export default function Navbar({url,cart}) {
                 data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
                 <ul className='dropdown-menu' aria-labelledby='dropdown01'>
                   {categories.map(category => (
-                    <li key={category.id}>
+                    <li key={category.category_id}>
                       {<Link 
                         className='dropdown-item'
-                        to={'/products/' + category.id}>{category.name}
+                        to={'/products/' + category.category_id}>{category.category_name}
                       </Link>}
                     </li>
                   ))}

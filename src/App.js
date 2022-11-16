@@ -10,7 +10,7 @@ import Order from './pages/Order';
 
 
 // tässä pitää olla se omalla koneella oleva polku php-kansioon
-const URL = 'http://localhost/webshop2022-master/';
+const URL = 'http://localhost/banaanikauppa/';
 
 function App() {
   // lifting state up, jotta kaikki voi käyttää alaspäin ostoskorin komponenttia

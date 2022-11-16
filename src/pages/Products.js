@@ -14,8 +14,12 @@ export default function Products({url,addToCart}) {
     axios.get(url + 'products/getproducts.php/' + params.categoryId)
       .then((response) => {
         const json = response.data;
-        setCategory(json.category);
-        setProducts(json.products);
+        setCategory(json.category_name);
+        //console.log(json);
+        console.log(json.category.category_name);
+        //console.log(json.product.product_id);
+
+        //setProducts(json.products);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
@@ -25,8 +29,8 @@ export default function Products({url,addToCart}) {
     <div>
       <h3>Products {category}</h3>
       {products.map(product => (
-        <div key={product.id}>
-          {product.name}
+        <div key={product.product_id}>
+          {product.album_name}
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta pois</button>
         </div>
       ))}
