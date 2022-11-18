@@ -34,7 +34,7 @@ export default function Order({cart,removeFromCart,updateAmount}) {
             sum+=parseFloat(product.price);
             return (
               <tr key={uuid()}>
-                <td>{product.name}</td>
+                <td>{product.album_name}</td>
                 <td>{product.price} €</td>
                 <td>
                   <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />

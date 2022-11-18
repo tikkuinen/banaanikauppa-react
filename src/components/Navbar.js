@@ -14,6 +14,7 @@ export default function Navbar({url,cart}) {
       .then((response) => {
         const json = response.data;
         setCategories(json);
+        //console.log(json);
       }).catch (error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
@@ -23,7 +24,7 @@ export default function Navbar({url,cart}) {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Levykauppa</a>
+          <a className="navbar-brand" href='/'>Levykauppa</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
