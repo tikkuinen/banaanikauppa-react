@@ -1,12 +1,13 @@
 import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import Cart from './Cart'
 
 export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
   // tulee taulukkona ne kategoriat backista
+  const[search, setSearch] = useState('');
 
 
   useEffect(() => {
@@ -19,6 +20,14 @@ export default function Navbar({url,cart}) {
         alert(error.response === undefined ? error : error.response.data.error);
       })
   }, [])
+
+  // Hakufunktio
+  function executeSearch(e) {
+    if (e.charCode === 13) {
+      e.preventDefault();
+      Navigate('/search/' + search);
+    }
+  }
 
   return (
     <>
@@ -52,6 +61,17 @@ export default function Navbar({url,cart}) {
                 <Link className='nav-link' to='/about'>Tietoa meistä</Link>
               </li>
             </ul>
+            {/* Hakupalkki */}
+            <form className="form-inline my-2 my-lg-0">
+              <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyPress={(e) => executeSearch(e)}
+              className="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search" />
+            </form>
             {/* Ostoskori */}
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>

@@ -51,7 +51,14 @@ function App() {
         <Routes>
             <Route path='/' element= {<Home />}/>
             <Route path='/products/:categoryId' element= {<Products url={URL} addToCart={addToCart} />}/>
-            <Route path='/order' element= {<Order cart={cart} removeFromCart={removeFromCart} updateAmount={updateAmount}/>}/>
+            <Route path='/search/:searchPhrase' element= {<Products url={URL} />}/>
+            <Route path='/product/:productId' element= {<Products url={URL} addToCart={addToCart} />}/>
+            <Route path='/order' element= {<Order
+              url={URL} 
+              cart={cart} 
+              removeFromCart={removeFromCart} 
+              updateAmount={updateAmount} />}
+            />
             <Route path='/about' element= {<About />}/>
         </Routes>
       </div>
