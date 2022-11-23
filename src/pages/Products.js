@@ -52,11 +52,14 @@ export default function Products({url, addToCart}) {
       {products.map(product => (
         <div key={product.product_id}>
           {/* Tähän tarvii varmaan jonkun taulukon */}
-          {product.album_name}
           {product.artist}
+          {product.album_name}
+          <div><img src={url + 'images/' + product.image} alt="tuotekuva"/></div>
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
-        </div>
+          </div>
+        
       ))}
     </div>
+    
   )
 }
