@@ -47,14 +47,15 @@ export default function Products({url, addToCart}) {
   }, [params])
   
   return (  
-    <div>
+    <div className='row' >
       <h3>Products {category}</h3>
       {products.map(product => (
-        <div key={product.product_id}>
-          {/* Tähän tarvii varmaan jonkun taulukon */}
-          {product.artist}
-          {product.album_name}
-          <div><img src={url + 'images/' + product.image} alt="tuotekuva"/></div>
+        <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>
+            {product.artist}
+            {product.album_name}
+          <div>
+            <img class= "img fluid" src={url + 'images/' + product.image} alt="tuotekuva"/>
+          </div>
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
           </div>
         
