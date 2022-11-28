@@ -3,6 +3,7 @@ import React from 'react';
 import {useState,useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
 
+
 export default function Products({url, addToCart}) {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState('');
@@ -40,6 +41,7 @@ export default function Products({url, addToCart}) {
       .then((response) => {
         const json = response.data;
         setProducts(json.products);
+        console.log(json.product.product_id);
         setCategory(json.category);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
@@ -51,11 +53,17 @@ export default function Products({url, addToCart}) {
       <h3>Products {category}</h3>
       {products.map(product => (
         <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>
-            {product.artist}
+             {product.artist}
             {product.album_name}
           <div>
-            <img class= "img fluid" src={url + 'images/' + product.image} alt="tuotekuva"/>
+            <img className= "img fluid" src={url + 'images/' + product.image} alt="tuotekuva"/>
           </div>
+          <Link 
+            to={'/product/' + product.product_id}>
+            <p>
+              Linkki
+            </p>
+        </Link>
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
           </div>
         

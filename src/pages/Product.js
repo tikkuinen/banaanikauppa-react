@@ -12,7 +12,8 @@ export default function Product({url}) {
     axios.get(url + 'products/getproduct.php/' + params.productId)
       .then((response) => {
         const json = response.data;
-        setProduct(response.data);
+        //setProduct(response.data);
+        console.log(response.data);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
@@ -20,8 +21,9 @@ export default function Product({url}) {
   
   return (
     <div>
-      <h3>{product?.name}</h3>
-      <p>{product?.price}</p>
+      <div>jotain tekstiä</div>
+      {/* <h3>{product?.artist}</h3>
+      <p>{product?.price}</p> */}
     </div>
   )
 }
