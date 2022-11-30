@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Order from './pages/Order';
+import Product from './pages/Product';
 
 
 // tässä pitää olla se omalla koneella oleva polku php-kansioon
@@ -51,8 +52,8 @@ function App() {
         <Routes>
             <Route path='/' element= {<Home />}/>
             <Route path='/products/:categoryId' element= {<Products url={URL} addToCart={addToCart} />}/>
-            {/* <Route path='/search/:searchPhrase' element= {<Products url={URL} />}/> */}
-            <Route path='/product/:productId' element= {<Products url={URL} addToCart={addToCart} />}/>
+            <Route path='/search/:searchPhrase' element= {<Products url={URL} />}/>
+            <Route path="/product/:productId" element={<Product url={URL} addToCart={addToCart} />}/>
             <Route path='/order' element= {<Order
               url={URL} 
               cart={cart} 

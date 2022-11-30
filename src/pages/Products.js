@@ -12,41 +12,38 @@ export default function Products({url, addToCart}) {
   // lukee osoitteesta sen idn
   let params = useParams();
 
-  // useEffect(() => {
-  //   let address = '';
+  useEffect(() => {
+    let address = '';
 
-  //   if (params.searchPhrase === undefined) {
-  //     address = url + 'products/getproducts.php/' + params.categoryId;
-  //   } else {
-  //     address = url + 'products/searchproducts.php/' + params.searchPhrase;
-  //   }
+    if (params.searchPhrase === undefined) {
+      address = url + 'products/getproducts.php/' + params.categoryId;
+    } else {
+      address = url + 'products/searchproducts.php/' + params.searchPhrase;
+    }
 
-  //   axios.get(address)
-  //     .then((response) => {
-  //       const json = response.data;
+    axios.get(address)
+      .then((response) => {
+        const json = response.data;
 
-  //       //console.log(json);
-
-  //       if (params.searchPhrase === undefined) {
-  //         setName(json.category);
-  //         setProducts(json.products);
-  //       } else {
-  //         setName(params.searchPhrase);
-  //         setProducts(json);
-  //       }
-  //     }).catch(error => {
-  //       alert(error.response === undefined ? error : error.response.data.error);
-  //     })
-  // }, [params])
+        if (params.searchPhrase === undefined) {
+          setName(json.category);
+          setProducts(json.products);
+        } else {
+          setName(params.searchPhrase);
+          setProducts(json);
+        }
+      }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+      })
+  }, [params])
 
   useEffect(() => {
     axios.get(url + 'products/getproducts.php/' + params.categoryId)
       .then((response) => {
         const json = response.data;
-        
         setProducts(json.products);
         setCategory(json.category);
-        console.log(products);
+        //console.log(products);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
@@ -55,12 +52,10 @@ export default function Products({url, addToCart}) {
   return (  
     <div className='row' >
       <h3>Products {category}</h3>
-      
-      
       {products.map(product => (
         <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>
-             {product.artist}
-            {product.album_name}
+          {product.artist}
+          {product.album_name}
             {/* Kuva joka toimii myös linkkinä */}
           <div>
             <Link 
@@ -69,10 +64,8 @@ export default function Products({url, addToCart}) {
             </Link>
           </div>
           <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
-          </div>
-        
+        </div>
       ))}
     </div>
-    
   )
 }
