@@ -24,22 +24,28 @@ function App() {
     }
   }, [])
   
-
   function addToCart(product) {
-    const newCart = [...cart,product];
-    setCart(newCart);
-    localStorage.setItem('cart',JSON.stringify(newCart));
+    if (cart.some(item => item.product_id === product.product_id)) {
+      const existingProduct = cart.filter(item => item.product_id === product.product_id);
+      updateAmount(parseInt(existingProduct[0].amount) +1,product);
+    }
+    else {
+      product['amount'] = 1;
+      const newCart = [...cart,product];
+      setCart(newCart);
+      localStorage.setItem('cart',JSON.stringify(newCart));
+    }
   }
 
   function removeFromCart(product) {
-    const itemsWithoutRemoved = cart.filter(item => item.id !== product.id);
+    const itemsWithoutRemoved = cart.filter(item => item.product_id !== product.product_id);
     setCart(itemsWithoutRemoved);
     localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
   }
 
   function updateAmount(amount,product) {
     product.amount = amount;
-    const index = cart.findIndex((item => item.id === product.id));
+    const index = cart.findIndex((item => item.product_id === product.product_id));
     const modifiedCart = Object.assign([...cart],{[index]: product});
     setCart(modifiedCart);
     localStorage.setItem('cart',JSON.stringify(modifiedCart));
@@ -58,7 +64,7 @@ function App() {
               url={URL} 
               cart={cart} 
               removeFromCart={removeFromCart} 
-              updateAmount={updateAmount} />}
+              updateAmount={updateAmount}/>}
             />
             <Route path='/about' element= {<About />}/>
         </Routes>

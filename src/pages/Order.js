@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
+import './Order.css';
 //import { createRef } from 'react/cjs/react.production.min';
 
-export default function Order({url, cart,removeFromCart,updateAmount}) {
-  const [inputs, ] = useState([]);
+export default function Order({url,cart,removeFromCart,updateAmount}) {
+  const [inputs,_] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
   const [firstname, setFirstname] = useState('');
@@ -18,13 +19,16 @@ export default function Order({url, cart,removeFromCart,updateAmount}) {
     for (let i = 0;i < cart.length;i++) {
       inputs[i] = React.createRef();
     }
-  }, [cart.length,inputs])
+  }, [cart.length])
+
+  // [cart.length,inputs])
   
   useEffect(()=> {
     if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
       inputs[inputIndex].current.focus();
     }
-  },[cart,inputs,inputIndex])
+  },[cart])
+  // },[cart,inputs,inputIndex])
 
   function order(e) {
     e.preventDefault();
@@ -60,30 +64,31 @@ export default function Order({url, cart,removeFromCart,updateAmount}) {
   if (finished === false) {
     return (
       <div>
-        <h3 className="header">Items in cart</h3>
+        <h3 className="header">Ostoskori</h3>
         <table className="table">
           <tbody>
             {cart.map((product,index) => {
               sum+=parseFloat(product.price) * parseInt(product.amount);
               return (
                 <tr key={uuid()}>
-                  <td>{product.name}</td>
+                  <td>{product.artist} {product.album_name}</td>
                   <td>{product.price} €</td>
                   <td>
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><a href="/#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                  <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
                 </tr>
               )
               })}
             <tr key={uuid()}>
-            <td></td>
-            <td>{sum.toFixed(2)} €</td>
-            <td></td>
-            <td></td>
+              <td></td>
+              <td>{sum.toFixed(2)} €</td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
+
         {cart.length > 0 && 
           <>
             <h3 className='header'>Asiakkaan tiedot</h3>
