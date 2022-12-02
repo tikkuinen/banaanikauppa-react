@@ -78,7 +78,12 @@ export default function Navbar({url,cart}) {
                 <Cart cart={cart}/>
               </li>
             </ul>
-
+            {/*Tuoteryhmän lisäys*/}
+            
+            <li className="navbar-item">
+                <Link className='nav-link' to='/addcategory'>Lisää tuoteryhmä</Link>
+            </li>
+            
           </div>
           {/* Hakupalkki */}
           <form className="form-inline my-2 my-lg-0">
