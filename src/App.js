@@ -8,6 +8,7 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Order from './pages/Order';
 import Product from './pages/Product';
+import AddCategory from './pages/AddCategory';
 
 
 // tässä pitää olla se omalla koneella oleva polku php-kansioon
@@ -67,6 +68,7 @@ function App() {
               updateAmount={updateAmount}/>}
             />
             <Route path='/about' element= {<About />}/>
+            <Route path='/addcategory' element= {<AddCategory url={URL} />}/>
         </Routes>
       </div>
       <Footer/>
