@@ -2,10 +2,10 @@ import React from 'react'
 import Carousel from '../components/Carousel';
 
 
-export default function Home() {
+export default function Home({url}) {
   return (
     <>
-    <Carousel/>
+    <Carousel url={url}/>
     <h3>Jotain muuta</h3>
     </>
     
