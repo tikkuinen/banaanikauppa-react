@@ -6,7 +6,7 @@ import axios from 'axios';
 
 export default function Carousel({url}) {
   const [product, setProduct] = useState([]);
-  const [image, setImage] = useState("");
+  //const [image, setImage] = useState("");
 
   // tässä random luku, menee tohon koodiin
 
@@ -16,10 +16,7 @@ export default function Carousel({url}) {
       .then((response) => {
         const json = response.data;
         setProduct(json.products);
-        console.log(json.products);
-        //const amount = json.products.length;
-        // ottaa 0 - pituus eli maksmäärä
-        //setImage(json.products[Math.floor(Math.random() * (amount - 0) ) + 0].image);
+        //console.log(json.products);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
