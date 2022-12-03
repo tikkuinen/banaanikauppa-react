@@ -32,7 +32,7 @@ export default function ManageCategories({url}) {
         <div>
           <label>Tuoteryhmä</label>
           <CategoryList
-            url={url} // pitääkö tässä olla osoite vai riittääkö näin?
+            url={url}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
