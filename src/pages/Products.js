@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import {useState,useEffect} from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './Products.css';
 
 
 export default function Products({url, addToCart}) {
@@ -50,7 +51,7 @@ export default function Products({url, addToCart}) {
   }, [params])
   
   return (  
-    <div className='row' >
+    <div id='products' className='row' >
       <h3>Products {category}</h3>
       {products.map(product => (
         <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>

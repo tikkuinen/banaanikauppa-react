@@ -3,6 +3,8 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import Cart from './Cart'
+import './Navbar.css'
+
 
 export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
@@ -31,7 +33,8 @@ export default function Navbar({url,cart}) {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  {/* <nav className='nav'></nav> */} 
+      <nav id= 'navbar' className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href='/'>Levykauppa</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +65,7 @@ export default function Navbar({url,cart}) {
               </li>
             </ul>
             {/* Hakupalkki */}
-            <form className=" form-inline my-2 my-lg-0">
+          {/*   <form className=" form-inline my-2 my-lg-0">
               <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -71,13 +74,13 @@ export default function Navbar({url,cart}) {
               type="search"
               placeholder="Search"
               aria-label="Search" />
-            </form>
+            </form> */} 
             {/* Ostoskori */}
-            <ul className='navbar-nav ml-auto'>
+          {/*     <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
                 <Cart cart={cart}/>
-              </li>
-            </ul>
+              </li> 
+            </ul>  */}
             {/*Tuoteryhmän lisäys*/}
             
             <li className="navbar-item">

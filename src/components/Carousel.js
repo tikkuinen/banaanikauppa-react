@@ -2,6 +2,7 @@ import {React, useEffect, useState} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import axios from 'axios';
+import './Carousel.css';
 
 export default function Carousel({url}) {
   const [product, setProduct] = useState([]);
