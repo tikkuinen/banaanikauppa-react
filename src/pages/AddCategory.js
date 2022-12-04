@@ -10,7 +10,7 @@ export default function ManageCategories({url}) {
 
   function saveCategory(e) {
     e.preventDefault();
-    const json =JSON.stringify({name: newCategory});
+    const json =JSON.stringify({category_name: newCategory});
     axios.post(url + 'products/addcategory.php', json,{
       headers: {
         'Content-type' : 'application/json'
