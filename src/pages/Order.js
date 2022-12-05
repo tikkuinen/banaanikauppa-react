@@ -13,6 +13,7 @@ export default function Order({url,cart,removeFromCart,updateAmount}) {
   const [address, setAddress] = useState('');
   const [zip, setZip] = useState('');
   const [city, setCity] = useState('');
+  const [telnro, setTelnro] = useState('');
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
@@ -39,6 +40,7 @@ export default function Order({url,cart,removeFromCart,updateAmount}) {
       address: address,
       zip: zip,
       city: city,
+      telnro: telnro,
       cart: cart,
     });
     axios.post(url + 'order/save.php',json,{
@@ -112,6 +114,10 @@ export default function Order({url,cart,removeFromCart,updateAmount}) {
               <div className='form-group'>
                 <label>Kaupunki:</label>
                 <input className='form-control' onChange={e => setCity(e.target.value)}/>
+              </div>
+              <div className='form-group'>
+                <label>Puhelin:</label>
+                <input className='form-control' onChange={e => setTelnro(e.target.value)}/>
               </div>
               <div className='buttons'>
                 <button className='btn btn-primary'>Tilaa</button>
