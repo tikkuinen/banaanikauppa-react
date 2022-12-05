@@ -13,7 +13,7 @@ export default function Carousel({url}) {
 
   // hakee taulukkona product-taulusta yhden, mut pitäiskö olla random kategoria?
   useEffect(() => {
-    axios.get(url + 'products/getproducts.php/3')
+    axios.get(url + 'products/getproducts.php/1')
       .then((response) => {
         const json = response.data;
         setProduct(json.products);

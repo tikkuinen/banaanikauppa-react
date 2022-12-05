@@ -22,7 +22,9 @@ export default function Product({url}) {
   return (
     <div>
     <h3>{product?.artist}</h3>
-    <p>{product?.price}</p>
+    <p>{product?.price} €</p>
+    <p>{product?.album_name}</p>
+    <p>{product?.pub_year }</p>
   </div>
   )
 }

@@ -55,8 +55,11 @@ export default function Products({url, addToCart}) {
       <h3>Products {category}</h3>
       {products.map(product => (
         <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>
+          <div>
           {product.artist}
           {product.album_name}
+          </div>
+          
             {/* Kuva joka toimii myös linkkinä */}
           <div>
             <Link 
