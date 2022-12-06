@@ -1,14 +1,25 @@
- #button {
+  #button {
     background-color:#1d5338;
     border: none;
     color: white;
-    margin-top: 1em;
-    margin-bottom: 2em;
+    margin-top: 1m;
+    margin-bottom: 2em; 
 
-}
+ } 
 
 #products {
-
+    color: #0e3e54;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: x-large;
+    margin-top: 2em;
     margin-bottom: 10em;
 
-}
+
+ } 
+
+#img {
+
+    margin-top: 1em;
+
+} 
