@@ -44,6 +44,10 @@ function App() {
     localStorage.setItem('cart',JSON.stringify(itemsWithoutRemoved));
   }
 
+  function removeAll() {
+    localStorage.clear();
+  }
+
   function updateAmount(amount,product) {
     product.amount = amount;
     const index = cart.findIndex((item => item.product_id === product.product_id));
@@ -65,7 +69,8 @@ function App() {
               url={URL} 
               cart={cart} 
               removeFromCart={removeFromCart} 
-              updateAmount={updateAmount}/>}
+              updateAmount={updateAmount}
+              removeAll={removeAll}/>}
             />
             <Route path='/about' element= {<About />}/>
             <Route path='/addcategory' element= {<AddCategory url={URL} />}/>

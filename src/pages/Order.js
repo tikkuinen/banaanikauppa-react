@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Order.css';
 //import { createRef } from 'react/cjs/react.production.min';
 
-export default function Order({url,cart,removeFromCart,updateAmount}) {
+export default function Order({url,cart,removeFromCart,updateAmount, removeAll}) {
   const [inputs,_] = useState([]);
   const [inputIndex, setInputIndex] = useState(-1);
 
@@ -78,7 +78,7 @@ export default function Order({url,cart,removeFromCart,updateAmount}) {
                   <td>
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><a href="#" onClick={() => removeFromCart(product)}>Delete</a></td>
+                  <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
                 </tr>
               )
               })}
@@ -86,7 +86,7 @@ export default function Order({url,cart,removeFromCart,updateAmount}) {
               <td></td>
               <td>{sum.toFixed(2)} €</td>
               <td></td>
-              <td></td>
+              <td><a href="#" onClick={() => removeAll()}>Poista kaikki</a></td>
             </tr>
           </tbody>
         </table>
