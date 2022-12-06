@@ -67,7 +67,7 @@ export default function Products({url, addToCart}) {
               <img className= "img fluid" src={url + 'images/' + product.image} alt="tuotekuva"/>
             </Link>
           </div>
-          <button className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
+          <button id='button' className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
         </div>
       ))}
     </div>
