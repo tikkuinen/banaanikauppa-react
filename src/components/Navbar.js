@@ -35,7 +35,7 @@ export default function Navbar({url,cart}) {
     <>
       <nav id='navbar' className="navbar navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
-          <a className="navbar-brand" href='/'>Levykauppa</a>
+          <a className="navbar-brand" href='/'>Banskulevyt</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -62,7 +62,7 @@ export default function Navbar({url,cart}) {
                 <Link className='nav-link' to='/about'>Tietoa meistä</Link>
               </li>
               <li className="nav-item">
-                <Link className='nav-link' to='/addcategory'>Lisää tuoteryhmä</Link>
+                <Link className='nav-link' to='/addcategory'>Admin</Link>
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
