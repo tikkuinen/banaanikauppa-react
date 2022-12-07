@@ -33,19 +33,17 @@ export default function Navbar({url,cart}) {
 
   return (
     <>
-  {/* <nav className='nav'></nav> */} 
-      <nav id= 'navbar' className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav id='navbar' className="navbar navbar-expand-md navbar-light bg-light">
         <div className="container-fluid">
           <a className="navbar-brand" href='/'>Levykauppa</a>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
+            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+              {/* <li className="nav-item">
                 <Link className='nav-link' to='/'>Etusivu</Link>
-              </li>
-              {/*  Tuotteet */}
+              </li> */}
               <li className='nav-item dropdown'>
                 <a className='nav-link dropdown-toggle' href="#" id="dropdown01" 
                 data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
@@ -63,43 +61,25 @@ export default function Navbar({url,cart}) {
               <li className="nav-item">
                 <Link className='nav-link' to='/about'>Tietoa meistä</Link>
               </li>
-            </ul>
-            {/* Hakupalkki */}
-          {/*   <form className=" form-inline my-2 my-lg-0">
-              <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              onKeyPress={(e) => executeSearch(e)}
-              className="form-control mr-sm-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search" />
-            </form> */} 
-            {/* Ostoskori */}
-          {/*     <ul className='navbar-nav ml-auto'>
-              <li className='nav-item'>
-                <Cart cart={cart}/>
-              </li> 
-            </ul>  */}
-            {/*Tuoteryhmän lisäys*/}
-            
-            <li className="navbar-item">
+              <li className="nav-item">
                 <Link className='nav-link' to='/addcategory'>Lisää tuoteryhmä</Link>
-            </li>
-            
-          </div>
-          {/* Hakupalkki */}
-          <form className="form-inline my-2 my-lg-0">
+              </li>
+            </ul>
+            <form className="form-inline my-2 my-lg-0">
               <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               onKeyPress={(e) => executeSearch(e)}
               className="form-control mr-sm-2"
               type="search"
-              placeholder="Search"
+              placeholder="Hae tuotteista"
               aria-label="Search" />
-          </form>
-          <Cart cart={cart}/>
+            </form>
+            <div>
+                <Cart cart={cart}/>
+            </div>
+
+          </div>
         </div>
       </nav>
     </>
