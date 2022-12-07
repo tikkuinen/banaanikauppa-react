@@ -44,6 +44,13 @@ export default function Carousel({url}) {
       <Link to={'../product/' + item.product_id}>
       <img src={url + 'images/' + item.image} alt="kuva" onDragStart={handleDragStart} role="presentation" />
       </Link>
+      <div>
+        {item.artist}
+      </div>
+      <div>
+        {item.album_name}
+      </div>
+      
     </div>
   ));
 
