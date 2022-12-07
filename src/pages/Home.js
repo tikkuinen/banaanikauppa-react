@@ -27,7 +27,7 @@ export default function Home({url}) {
       <h1>Tervetuloa Suomen suosituimpaan käytettyjen cd- levyjen verkkokauppaan!</h1>
     </div>
     <Carousel url={url}/>
-    <h3>Tässä tuoteryhmät?</h3>
+    <h3>Tuoteryhmät</h3>
     <table>
       <tbody>
       

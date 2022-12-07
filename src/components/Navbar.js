@@ -75,7 +75,7 @@ export default function Navbar({url,cart}) {
               placeholder="Hae tuotteista"
               aria-label="Search" />
             </form>
-            <div>
+            <div className='cart'>
                 <Cart cart={cart}/>
             </div>
 
