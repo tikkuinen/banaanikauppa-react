@@ -50,7 +50,6 @@ export default function Carousel({url}) {
       <div>
         {item.album_name}
       </div>
-      
     </div>
   ));
 
