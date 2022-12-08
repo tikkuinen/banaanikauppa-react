@@ -7,9 +7,8 @@ import './Carousel.css';
 
 export default function Carousel({url}) {
   const [product, setProduct] = useState([]);
-  //const [image, setImage] = useState("");
+  const [rands, setRands] = useState([]);
 
-  // tässä random luku, menee tohon koodiin
 
   //(url + 'products/getproducts.php/1')
 
@@ -19,7 +18,29 @@ export default function Carousel({url}) {
       .then((response) => {
         const json = response.data;
         setProduct(json);
-        console.log(json);
+        // tää nyt on muuten vaan kertomassa kuinka monta tuotetta sieltä tuli
+        console.log(json.length);
+        // tällä otetaan talteen se kuinka monta niitä tuli
+        const number = json.length;
+        
+        // luodaan taulukko, jossa arvotaan viisi lukua väliltä 0 - tuotteiden määrä
+        
+        let num = 0; 
+        for (let i = 0; i < 10; i++) {
+          num = Math.floor(Math.random() * (5 - 0 + 1) ) + 0;
+          console.log(num)
+          const uus = [...rands,num];
+          setRands(uus);
+        }
+        
+
+        
+        //console.log(rands);
+
+        // tällä filtteröidään se json, tai laita tilamuuttuja
+        // const randomized = json.filter( (item) => item.pub_year === "2000");
+        // console.log(randomized);
+
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
