@@ -20,16 +20,13 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
     for (let i = 0;i < cart.length;i++) {
       inputs[i] = React.createRef();
     }
-  }, [cart.length])
-
-  // [cart.length,inputs])
+  }, [cart.length,inputs])
   
   useEffect(()=> {
     if (inputs.length > 0 && inputIndex > -1 && inputs[inputIndex].current !== null) {
       inputs[inputIndex].current.focus();
     }
-  },[cart])
-  // },[cart,inputs,inputIndex])
+  },[cart,inputs,inputIndex])
 
   function order(e) {
     e.preventDefault();
@@ -50,6 +47,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
       }
     })
     .then(() => {
+      //empty();
       setFinished(true);
     }).catch(error => {
       alert(error.response === undefined ? error : error.response.data.error);
@@ -90,7 +88,6 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
             </tr>
           </tbody>
         </table>
-
         {cart.length > 0 && 
           <>
             <h3 className='header'>Asiakkaan tiedot</h3>
@@ -128,6 +125,6 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
       </div>
     )
   } else {
-    return (<h3>Kiitoksia tilauksestasi!</h3>)
+    return (<h3>Kiitoksia tilauksestasi!</h3>);
   }
 }

@@ -16,3 +16,8 @@
     font-size: xx-large;
     font-weight: bold;
   }
+
+  .container {
+    box-sizing: border-box;
+    height: 100vh;
+  }
