@@ -30,14 +30,15 @@ export default function Home({url}) {
     <h3>Tuoteryhmät</h3>
     <table>
       <tbody>
-      
+        
         <tr>
         {categories.map(category => (
           <td key={category.category_id}>
             {<Link
             to={'/products/' + category.category_id}>{category.category_name}
-            </Link>}
+            </Link>} 
           </td>
+         
             ))}
         </tr>
       </tbody>
