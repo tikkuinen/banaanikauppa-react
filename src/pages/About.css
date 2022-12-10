@@ -1,0 +1,29 @@
+h1 {
+
+    color: #0e3e54;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large; 
+    font-weight:normal;
+    margin-bottom: 4em;
+}
+h2 {
+    color: #0e3e54;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large; 
+    font-weight:normal;
+    margin-bottom: 5em;
+    text-align: center;
+   
+}
+
+.teksti {
+
+    color: #0e3e54;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    font-weight:normal;
+    margin-bottom: 2em;
+    text-align: center;
+
+
+}
