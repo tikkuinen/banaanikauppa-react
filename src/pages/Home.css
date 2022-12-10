@@ -20,3 +20,15 @@ body {
 
 
   }
+
+  .button{
+    background-color:#1d5338;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    color: white;
+    margin-top: 1m;
+    margin-bottom: 2em; 
+    border-radius: 8px;
+  
+
+  }

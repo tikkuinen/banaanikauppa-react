@@ -35,10 +35,10 @@ export default function Home({url}) {
         {categories.map(category => (
           <td key={category.category_id}>
             {<Link
-            to={'/products/' + category.category_id}>{category.category_name}
+            to={'/products/' + category.category_id}>
+            <button className='button'>{category.category_name}</button>
             </Link>} 
           </td>
-         
             ))}
         </tr>
       </tbody>
