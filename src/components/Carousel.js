@@ -13,6 +13,9 @@ export default function Carousel({url}) {
   //(url + 'products/getproducts.php/1')
 
   // hakee taulukkona product-taulusta yhden, mut pitäiskö olla random kategoria?
+  const randomArray = (length, max) => 
+    Array(length).fill().map(() => Math.round(Math.random() * max));
+
   useEffect(() => {
     axios.get(url + 'products/getrandom.php')
       .then((response) => {
@@ -24,22 +27,17 @@ export default function Carousel({url}) {
         const number = json.length;
         
         // luodaan taulukko, jossa arvotaan viisi lukua väliltä 0 - tuotteiden määrä
-        
-        let num = 0; 
-        for (let i = 0; i < 10; i++) {
-          num = Math.floor(Math.random() * (5 - 0 + 1) ) + 0;
-          console.log(num)
-          const uus = [...rands,num];
-          setRands(uus);
-        }
-        
-
-        
-        //console.log(rands);
+        let randoooo = randomArray(10,number);
+        console.log(randoooo);
+        setRands(randoooo);
+       
+        // // toimii?
+        console.log(rands);
 
         // tällä filtteröidään se json, tai laita tilamuuttuja
+        const randomized = json.filter(JSON.stringify(randoooo));
         // const randomized = json.filter( (item) => item.pub_year === "2000");
-        // console.log(randomized);
+        console.log(randomized);
 
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
