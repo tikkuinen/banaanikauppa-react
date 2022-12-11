@@ -1,6 +1,7 @@
 import axios from "axios";
 import {useState} from "react";
 import CategoryList from "../components/CategoryList";
+import './AddCategory.css';
 
 
 export default function ManageCategories({url}) {
@@ -29,14 +30,15 @@ export default function ManageCategories({url}) {
     return (
       <>
         <h2>Hallitse tuoteryhmiä</h2>
-        <div>
-          <label>Tuoteryhmä</label>
+        <div className="tuoteryhma">
+          <label>Tuoteryhmä</label><br></br>
           <CategoryList
             url={url}
             selectedCategory={selectedCategory}
             setSelectedCategory={setSelectedCategory}
           />
-          <button className="btn btn-dark" type='button' onClick={()=> setAddingCategory(true)}>Lisää</button>
+          <br></br>
+          <button className="button" type='button' onClick={()=> setAddingCategory(true)}>Lisää</button>
         </div>
       </>
     )
@@ -45,12 +47,14 @@ export default function ManageCategories({url}) {
       <>
       <h2> Lisää uusi tuoteryhmä</h2>
       <form onSubmit={saveCategory}>
-        <div>
+        <div className='tuoteryhma'>
           <label> Tuoteryhmän nimi</label>
+          <br></br>
           <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}/>
         </div>
         <button type="button" onClick={() => setAddingCategory(false)}>Peruuta</button>
         <button type="submit">Tallenna</button>
+        
       </form>
       </>
     )
