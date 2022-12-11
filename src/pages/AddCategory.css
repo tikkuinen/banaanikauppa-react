@@ -4,6 +4,7 @@
     font-size: larger;
     margin-bottom: 4em;
     text-align: center;
+    
 }
 
 
@@ -20,4 +21,13 @@ h3 {
     font-size: larger;
     margin-bottom: 4em;
     text-align: center;
+}
+
+.keskita {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
 }

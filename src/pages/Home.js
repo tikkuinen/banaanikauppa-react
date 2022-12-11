@@ -28,9 +28,9 @@ export default function Home({url}) {
     </div>
     <Carousel url={url}/>
     <h3>Tuoteryhmät</h3>
+    <div className='napit'>
     <table>
       <tbody>
-        
         <tr>
         {categories.map(category => (
           <td key={category.category_id}>
@@ -39,11 +39,11 @@ export default function Home({url}) {
             <button className='button'>{category.category_name}</button>
             </Link>} 
           </td>
-            ))}
+            ))} 
         </tr>
       </tbody>
     </table>
-
+    </div> 
     </>
     
   )

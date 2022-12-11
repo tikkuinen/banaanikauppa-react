@@ -46,16 +46,18 @@ export default function ManageCategories({url}) {
     return (
       <>
       <h2> Lisää uusi tuoteryhmä</h2>
+      <div className='keskita'>
       <form onSubmit={saveCategory}>
         <div className='tuoteryhma'>
           <label> Tuoteryhmän nimi</label>
           <br></br>
           <input type="text" value={newCategory} onChange={(e) => setNewCategory(e.target.value)}/>
-        </div>
-        <button type="button" onClick={() => setAddingCategory(false)}>Peruuta</button>
-        <button type="submit">Tallenna</button>
+        </div> 
+        <button className="button" onClick={() => setAddingCategory(false)}>Peruuta</button>
+        <button className="button">Tallenna</button>
         
       </form>
+      </div>
       </>
     )
   }
