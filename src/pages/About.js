@@ -6,6 +6,7 @@ export default function About() {
     <div>
     <h1>Tietoa meistä</h1>
       <h2>Verkkopalveluprojekti</h2>
+      <h2>Ryhmä 6</h2>
       <p className='teksti'>Riina Laukkanen, Tiia Lindell, Saara Laaninen ja Santeri Lassila TIK22KM </p>
     </div>
   )
