@@ -17,7 +17,6 @@ export default function Navbar({url,cart}) {
       .then((response) => {
         const json = response.data;
         setCategories(json);
-        //console.log(json);
       }).catch (error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
@@ -28,6 +27,7 @@ export default function Navbar({url,cart}) {
     if (e.charCode === 13) {
       e.preventDefault();
       Navigate('/search/' + search);
+      console.log(search);
     }
   }
 
@@ -69,7 +69,7 @@ export default function Navbar({url,cart}) {
               <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              onKeyPress={(e) => executeSearch(e)}
+              onKeyDown={(e) => executeSearch(e)}
               className="form-control mr-sm-2"
               type="search"
               placeholder="Hae tuotteista"

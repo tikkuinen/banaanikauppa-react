@@ -77,7 +77,6 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
                   <td><button type="button" className="btn-close" aria-label="Close" onClick={() => removeFromCart(product)}></button></td>
-                  {/* <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td> */}
                 </tr>
               )
               })}

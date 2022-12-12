@@ -22,6 +22,8 @@ export default function Products({url, addToCart}) {
       address = url + 'products/searchproducts.php/' + params.searchPhrase;
     }
 
+    console.log(params);
+
     axios.get(address)
       .then((response) => {
         const json = response.data;
@@ -38,17 +40,16 @@ export default function Products({url, addToCart}) {
       })
   }, [params])
 
-  useEffect(() => {
-    axios.get(url + 'products/getproducts.php/' + params.categoryId)
-      .then((response) => {
-        const json = response.data;
-        setProducts(json.products);
-        setCategory(json.category);
-        //console.log(products);
-      }).catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-      })
-  }, [params])
+  // useEffect(() => {
+  //   axios.get(url + 'products/getproducts.php/' + params.categoryId)
+  //     .then((response) => {
+  //       const json = response.data;
+  //       setProducts(json.products);
+  //       setCategory(json.category);
+  //     }).catch(error => {
+  //       alert(error.response === undefined ? error : error.response.data.error);
+  //     })
+  // }, [params])
   
   return (  
     <div id='products' className='row' >
@@ -59,8 +60,6 @@ export default function Products({url, addToCart}) {
           {product.artist}<br></br>
           {product.album_name}
           </div>
-          
-            {/* Kuva joka toimii myös linkkinä */}
           <div>
             <Link 
               to={'/product/' + product.product_id}>
