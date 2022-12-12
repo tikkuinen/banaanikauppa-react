@@ -24,7 +24,7 @@ export default function Product({url, addToCart}) {
   return (
      <div id='product' className='row' >
       <div>
-       <img className= "img fluid" src={url + 'images/' + product.image} alt="tuotekuva"/>
+       <img className= "img fluid" src={url + 'images/' + product.image} />
        <p></p>
         <p>{product?.artist}</p>
         <p>{product?.album_name}</p>

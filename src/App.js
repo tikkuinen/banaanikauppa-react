@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Order from './pages/Order';
 import Product from './pages/Product';
 import AddCategory from './pages/AddCategory';
+import Search from './pages/Search';
 
 
 // tässä pitää olla se omalla koneella oleva polku php-kansioon
