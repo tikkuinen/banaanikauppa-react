@@ -25,19 +25,17 @@ export default function Carousel({url}) {
         console.log(json.length);
         // tällä otetaan talteen se kuinka monta niitä tuli
         const number = json.length;
+
+
+
+
         
         // luodaan taulukko, jossa arvotaan viisi lukua väliltä 0 - tuotteiden määrä
-        // let randoooo = randomArray(10,number);
-        // console.log(randoooo);
-        // setRands(randoooo);
-       
-        // // toimii?
-        //console.log(rands);
-
-        // tällä filtteröidään se json, tai laita tilamuuttuja
-        //const randomized = json.filter(JSON.stringify(randoooo));
-        // const randomized = json.filter( (item) => item.pub_year === "2000");
-        //console.log(randomized);
+        let randoooo = randomArray(10,number);
+        console.log(randoooo);
+        const randomized = json.filter( (item) => item.pub_year === "2000");
+        console.log(randomized);
+        setProduct(randomized);
 
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
