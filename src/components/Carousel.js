@@ -25,14 +25,12 @@ export default function Carousel({url}) {
         console.log(json.length);
         // tällä otetaan talteen se kuinka monta niitä tuli
         const number = json.length;
-
-
-
-
         
         // luodaan taulukko, jossa arvotaan viisi lukua väliltä 0 - tuotteiden määrä
         let randoooo = randomArray(10,number);
         console.log(randoooo);
+        
+        // tässä nyt hakee sillä määritellyllä jutulla ollut
         const randomized = json.filter( (item) => item.pub_year === "2000");
         console.log(randomized);
         setProduct(randomized);

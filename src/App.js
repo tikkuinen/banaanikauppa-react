@@ -46,7 +46,7 @@ function App() {
   }
 
   function removeAll() {
-    localStorage.clear();
+    setCart([]);
   }
 
   function updateAmount(amount,product) {

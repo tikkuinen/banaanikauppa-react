@@ -47,7 +47,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
       }
     })
     .then(() => {
-      //empty();
+      removeAll();
       setFinished(true);
     }).catch(error => {
       alert(error.response === undefined ? error : error.response.data.error);
