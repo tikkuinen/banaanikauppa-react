@@ -1,10 +1,9 @@
   #button {
     background-color:#1d5338;
     border: none;
-    color: white;
-    margin-top: 1m;
+    color: #FFFFFF;
+    margin-top: 1em;
     margin-bottom: 2em; 
-
  } 
 
 #products {
@@ -14,12 +13,8 @@
     font-size: x-large;
     margin-top: 2em;
     margin-bottom: 10em;
-
-
- } 
+} 
 
 #img {
-
     margin-top: 1em;
-
 }

@@ -76,15 +76,16 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                   <td>
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td>
+                  <td><button type="button" className="btn-close" aria-label="Close" onClick={() => removeFromCart(product)}></button></td>
+                  {/* <td><a href="#" onClick={() => removeFromCart(product)}>Poista</a></td> */}
                 </tr>
               )
               })}
             <tr key={uuid()}>
               <td></td>
               <td>{sum.toFixed(2)} €</td>
+              <td><button type="button" id="empty" className="btn btn-dark" onClick={() => removeAll()}>Tyhjennä</button></td>
               <td></td>
-              <td><a href="#" onClick={() => removeAll()}>Poista kaikki</a></td>
             </tr>
           </tbody>
         </table>

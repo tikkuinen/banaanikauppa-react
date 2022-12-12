@@ -7,8 +7,8 @@ export default function Cart({cart}) {
   //console.log(cart.length);
   return (
     <Link to="/order">
-      <FontAwesomeIcon icon={faCartShopping} />
-      <span style={{}}>{cart.length}</span>
+      <FontAwesomeIcon icon={faCartShopping}/>
+      <span>{cart.length}</span>
     </Link>
   )
 }

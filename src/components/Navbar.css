@@ -15,5 +15,11 @@
 .cart {
     padding-left: 10px;
     padding-bottom: 5px;
+    font-size: 1.5em;
 }
- 
+
+/* Ikonin linkistä viiva pois */
+a {
+    text-decoration: none;
+    color: #1d5338;
+}
