@@ -23,3 +23,8 @@ a {
     text-decoration: none;
     color: #1d5338;
 }
+
+form {
+    margin-right: 40px;
+    max-width: 1000px;
+}
