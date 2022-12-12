@@ -25,7 +25,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     border: none;
     color: white;
-    margin-top: 1m;
+    margin-top: 2em;
     margin-bottom: 2em; 
     border-radius: 8px;
     
@@ -38,6 +38,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 5em;
 
   }
   
