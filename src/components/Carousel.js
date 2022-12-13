@@ -35,7 +35,7 @@ export default function Carousel({url}) {
   const items = product.map(item => (
     <div className='item'>
       <Link to={'../product/' + item.product_id}>
-      <img src={url + 'images/' + item.image} alt="kuva" onDragStart={handleDragStart} role="presentation" />
+      <img src={url + 'images/' + item.image} alt="kuva" className='rounded mx-auto d-block' onDragStart={handleDragStart} role="presentation" />
       </Link>
       <div>
         {item.artist}

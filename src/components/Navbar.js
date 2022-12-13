@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Cart from './Cart'
 import './Navbar.css'
 
@@ -10,6 +10,9 @@ export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
   // tulee taulukkona ne kategoriat backista
   const[search, setSearch] = useState('');
+
+  // tän lisäsin koska google
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -24,9 +27,11 @@ export default function Navbar({url,cart}) {
 
   // Hakufunktio
   function executeSearch(e) {
+    
+
     if (e.charCode === 13) {
       e.preventDefault();
-      Navigate('/search/' + search);
+      navigate('/search/' + search);
       console.log(search);
     }
   }

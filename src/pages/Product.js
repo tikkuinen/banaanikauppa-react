@@ -14,17 +14,15 @@ export default function Product({url, addToCart}) {
       .then((response) => {
         const json = response.data;
         setProduct(json);
-        //console.log(json);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       }) 
   }, [params])
 
-  
   return (
      <div id='product' className='row' >
       <div>
-       <img className= "img fluid" src={url + 'images/' + product.image} alt="kuva"/>
+       <img className= "img-fluid" src={url + 'images/' + product.image} alt="kuva"/>
        <p></p>
         <p>{product?.artist}</p>
         <p>{product?.album_name}</p>
