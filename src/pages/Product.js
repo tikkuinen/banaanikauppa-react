@@ -14,24 +14,25 @@ export default function Product({url, addToCart}) {
       .then((response) => {
         const json = response.data;
         setProduct(json);
+        console.log(json);
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       }) 
   }, [params])
 
   return (
-     <div id='product' className='row' >
+    <div id='product' className='row' >
       <div>
-       <img className= "img fluid" src={url + 'images/' + product.image}/>
-       <p></p>
+        <img className= 'img-fluid' src={url + 'images/' + product.image}/>
+        <p></p>
         <p>{product?.artist}</p>
         <p>{product?.album_name}</p>
         <p>{product?.pub_year }</p>
         <p>{product?.price} €</p>
       </div> 
       <div> 
-     <button id='button' className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
-   </div>
-  </div>
+        <button id='button' className='btn btn-primary' type='button' onClick={e => addToCart(product)}>Osta</button>
+      </div>
+    </div>
   ) 
 }

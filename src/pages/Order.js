@@ -73,7 +73,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                   <td>{product.artist} : {product.album_name}</td>
                   <td>{product.price} €</td>
                   <td>
-                    <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
+                    <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)}/>
                   </td>
                   <td>
                     <button type="button" className="btn-close" aria-label="Close" onClick={() => removeFromCart(product)}></button>
