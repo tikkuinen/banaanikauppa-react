@@ -116,7 +116,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
               <div className='form-group row'>
                 <div className="col-sm-5 mx-auto">
                   <label className='col-form-label'>Postinumero:</label>
-                  <input className='form-control' onChange={e => setZip(e.target.value)}/>
+                  <input type='number' className='form-control' onChange={e => setZip(e.target.value)}/>
                 </div>
               </div>
               <div className='form-group row'>
@@ -128,7 +128,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
               <div className='form-group row'>
                 <div className="col-sm-5 mx-auto">
                   <label className='col-form-label'>Puhelin:</label>
-                  <input className='form-control' onChange={e => setTelnro(e.target.value)}/>
+                  <input type='number' className='form-control' onChange={e => setTelnro(e.target.value)}/>
                 </div>
               </div>
               <div className='buttons col-sm-5 mx-auto'>
