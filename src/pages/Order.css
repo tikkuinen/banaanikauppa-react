@@ -25,3 +25,7 @@ input {
     align-self: center;
     max-width: 500px;
 }
+
+.buttons {
+    text-align: center;
+}

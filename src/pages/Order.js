@@ -99,29 +99,39 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                 <div className="col-sm-5 mx-auto">
                   <label className='col-form-label'>Etunimi:</label>
                   <input className='form-control' onChange={e => setFirstname(e.target.value)}/>
+                </div>
               </div>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label className='col-form-label'>Sukunimi:</label>
+                  <input className='form-control' onChange={e => setLastname(e.target.value)}/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label>Sukunimi:</label>
-                <input className='form-control' onChange={e => setLastname(e.target.value)}/>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label className='col-form-label'>Osoite:</label>
+                  <input className='form-control' onChange={e => setAddress(e.target.value)}/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label>Osoite:</label>
-                <input className='form-control' onChange={e => setAddress(e.target.value)}/>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label className='col-form-label'>Postinumero:</label>
+                  <input className='form-control' onChange={e => setZip(e.target.value)}/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label>Postinumero:</label>
-                <input className='form-control' onChange={e => setZip(e.target.value)}/>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label className='col-form-label'>Kaupunki:</label>
+                  <input className='form-control' onChange={e => setCity(e.target.value)}/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label>Kaupunki:</label>
-                <input className='form-control' onChange={e => setCity(e.target.value)}/>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label>Puhelin:</label>
+                  <input className='form-control' onChange={e => setTelnro(e.target.value)}/>
+                </div>
               </div>
-              <div className='form-group'>
-                <label>Puhelin:</label>
-                <input className='form-control' onChange={e => setTelnro(e.target.value)}/>
-              </div>
-              <div className='buttons'>
+              <div className='buttons col-sm-5 mx-auto'>
                 <button className='btn btn-primary'>Tilaa</button>
               </div>
             </form>
