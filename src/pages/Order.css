@@ -29,3 +29,7 @@ input {
 .buttons {
     text-align: center;
 }
+
+#order-form {
+    padding-top: 20px;
+}

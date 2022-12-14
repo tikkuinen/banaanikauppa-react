@@ -70,7 +70,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
               sum+=parseFloat(product.price) * parseInt(product.amount);
               return (
                 <tr key={uuid()}>
-                  <td>{product.artist} {product.album_name}</td>
+                  <td>{product.artist} : {product.album_name}</td>
                   <td>{product.price} €</td>
                   <td>
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
@@ -92,7 +92,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
           </tbody>
         </table>
         {cart.length > 0 && 
-          <>
+          <div id='order-form'>
             <h3 className='header'>Asiakkaan tiedot</h3>
             <form onSubmit={order}>
               <div className='form-group row'>
@@ -127,7 +127,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
               </div>
               <div className='form-group row'>
                 <div className="col-sm-5 mx-auto">
-                  <label>Puhelin:</label>
+                  <label className='col-form-label'>Puhelin:</label>
                   <input className='form-control' onChange={e => setTelnro(e.target.value)}/>
                 </div>
               </div>
@@ -135,7 +135,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                 <button className='btn btn-primary'>Tilaa</button>
               </div>
             </form>
-          </>
+          </div>
         }
       </div>
     )

@@ -35,5 +35,3 @@ export default function Product({url, addToCart}) {
   </div>
   ) 
 }
-
-
