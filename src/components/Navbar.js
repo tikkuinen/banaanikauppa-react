@@ -7,10 +7,8 @@ import './Navbar.css'
 
 export default function Navbar({url,cart}) {
   const [categories, setCategories] = useState([]);
-  // tulee taulukkona ne kategoriat backista
   const[search, setSearch] = useState('');
 
-  // tän lisäsin koska google
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +26,7 @@ export default function Navbar({url,cart}) {
     if (e.charCode === 13) {
       e.preventDefault();
       navigate('/search/' + search);
-      console.log(search);
+      //console.log(search);
     }
   }
 
@@ -42,9 +40,6 @@ export default function Navbar({url,cart}) {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
-              {/* <li className="nav-item">
-                <Link className='nav-link' to='/'>Etusivu</Link>
-              </li> */}
               <li className='nav-item dropdown'>
                 <a className='nav-link dropdown-toggle' href="#" id="dropdown01" 
                 data-bs-toggle="dropdown" aria-expanded="false">Tuotteet</a>
@@ -70,7 +65,7 @@ export default function Navbar({url,cart}) {
               <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              onKeyDown={(e) => executeSearch(e)}
+              onKeyPress={(e) => executeSearch(e)}
               className="form-control mr-sm-2"
               type="search"
               placeholder="Hae tuotteista"

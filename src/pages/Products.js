@@ -21,9 +21,7 @@ export default function Products({url, addToCart}) {
     } else {
       address = url + 'products/searchproducts.php/' + params.searchPhrase;
     }
-
-    console.log(params);
-
+    
     axios.get(address)
       .then((response) => {
         const json = response.data;
@@ -53,7 +51,7 @@ export default function Products({url, addToCart}) {
   
   return (  
     <div id='products' className='row' >
-      <h3>{category}</h3>
+      <h3>{name}</h3>
       {products.map(product => (
         <div className='col-12 col-md-4 col-lg-4' key={product.product_id}>
           <div>
