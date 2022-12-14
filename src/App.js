@@ -61,7 +61,7 @@ function App() {
         <Routes>
             <Route path='/' element= {<Home url={URL}/>}/>
             <Route path='/products/:categoryId' element= {<Products url={URL} addToCart={addToCart} />}/>
-            <Route path='/search/:searchPhrase' element= {<Products url={URL} />}/>
+            <Route path='/search/:searchPhrase' element= {<Products url={URL} addToCart={addToCart}/>}/>
             <Route path="/product/:productId" element={<Product url={URL} addToCart={addToCart} />}/>
             <Route path='/order' element= {<Order
               url={URL} 

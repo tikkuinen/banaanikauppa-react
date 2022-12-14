@@ -7,10 +7,9 @@ import './Products.css';
 
 export default function Products({url, addToCart}) {
   const [products, setProducts] = useState([]);
-  const [category, setCategory] = useState('');
   const [name, setName] = useState('');
 
-  // lukee osoitteesta sen idn
+  // lukee osoitteesta sen id:n
   let params = useParams();
 
   useEffect(() => {
@@ -38,17 +37,6 @@ export default function Products({url, addToCart}) {
       })
   }, [params])
 
-  useEffect(() => {
-    axios.get(url + 'products/getproducts.php/' + params.categoryId)
-      .then((response) => {
-        const json = response.data;
-        setProducts(json.products);
-        setCategory(json.category);
-      }).catch(error => {
-        alert(error.response === undefined ? error : error.response.data.error);
-      })
-  }, [params])
-  
   return (  
     <div id='products' className='row' >
       <h3>{name}</h3>
