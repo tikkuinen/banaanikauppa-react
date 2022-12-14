@@ -34,7 +34,7 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
       firstname: firstname,
       lastname: lastname,
       address: address,
-      zip: zip,
+      postcode: zip,
       city: city,
       telnro: telnro,
       cart: cart,
