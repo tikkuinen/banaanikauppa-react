@@ -16,3 +16,8 @@
     font-size: xx-large;
     font-weight: bold;
   }
+
+  .container {
+    height: 800px;
+    padding-bottom: 100px;
+  }

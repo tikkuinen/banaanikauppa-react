@@ -20,3 +20,8 @@
     margin: 0;
     font-family: 'Courier New', Courier, monospace; 
 }
+
+input {
+    align-self: center;
+    max-width: 500px;
+}

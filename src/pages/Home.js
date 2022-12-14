@@ -24,21 +24,21 @@ export default function Home({url}) {
       </div>
       <Carousel url={url}/>
       <div className='napit'>
-      <table>
-        <tbody>
-          <tr>
-          {categories.map(category => (
-            <td key={category.category_id}>
-              {<Link
-              to={'/products/' + category.category_id}>
-              <button className='button'>{category.category_name}</button>
-              </Link>} 
-            </td>
-              ))} 
-          </tr>
-        </tbody>
-      </table>
-      </div> 
+        <table>
+          <tbody>
+            <tr>
+            {categories.map(category => (
+              <td key={category.category_id}>
+                {<Link
+                to={'/products/' + category.category_id}>
+                <button className='button'>{category.category_name}</button>
+                </Link>} 
+              </td>
+                ))} 
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }

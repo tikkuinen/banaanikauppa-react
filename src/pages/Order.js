@@ -95,9 +95,11 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
           <>
             <h3 className='header'>Asiakkaan tiedot</h3>
             <form onSubmit={order}>
-              <div className='form-group'>
-                <label>Etunimi:</label>
-                <input className='form-control' onChange={e => setFirstname(e.target.value)}/>
+              <div className='form-group row'>
+                <div className="col-sm-5 mx-auto">
+                  <label className='col-form-label'>Etunimi:</label>
+                  <input className='form-control' onChange={e => setFirstname(e.target.value)}/>
+              </div>
               </div>
               <div className='form-group'>
                 <label>Sukunimi:</label>

@@ -11,6 +11,8 @@
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     margin-top: 2em;
+    padding-top: 3em;
+    text-align: center;
 }
 
 h3 {

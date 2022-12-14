@@ -20,17 +20,17 @@ export default function Carousel({url}) {
   
   const handleDragStart = (e) => e.preventDefault();
 
-  // const responsive = {
-  //   0: {
-  //       items: 1
-  //   },
-  //   568: {
-  //       items: 2
-  //   },
-  //   1024: {
-  //       items: 3
-  //   },
-  // };
+  const responsive = {
+    0: {
+        items: 1
+    },
+    568: {
+        items: 2
+    },
+    1024: {
+        items: 4
+    },
+  };
 
   const items = product.map(item => (
     <div className='item'>
@@ -54,11 +54,11 @@ export default function Carousel({url}) {
         autoPlay={true}
         autoPlayInterval={2000}
         infinite={true}
-        // paddingLeft={0}
-        // paddingRight={0}
-        // responsive={responsive}
+        paddingLeft={0}
+        paddingRight={0}
+        responsive={responsive}
         disableButtonsControls={true}
-        // controlsStrategy={"alternate"}
+        controlsStrategy={"alternate"}
         />
       </div>
   );

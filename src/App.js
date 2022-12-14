@@ -69,7 +69,7 @@ function App() {
               removeFromCart={removeFromCart} 
               updateAmount={updateAmount}
               removeAll={removeAll}/>}
-            />
+              />
             <Route path='/about' element= {<About />}/>
             <Route path='/addcategory' element= {<AddCategory url={URL} />}/>
         </Routes>

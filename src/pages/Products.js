@@ -35,7 +35,7 @@ export default function Products({url, addToCart}) {
       }).catch(error => {
         alert(error.response === undefined ? error : error.response.data.error);
       })
-  }, [params])
+    }, [params])
 
   return (  
     <div id='products' className='row' >
