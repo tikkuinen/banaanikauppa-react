@@ -4,8 +4,6 @@
     margin-bottom: 5em;
 }
 
-/* Tiia teki tästä alaspäin */
-
 /* Tämä vaihtaa kaikki taustat vihreiksi */
 .container-fluid, li, .dropdown-menu.show  {
     background-color: #83a2b1;

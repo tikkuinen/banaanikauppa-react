@@ -3,7 +3,6 @@ import {useState} from "react";
 import CategoryList from "../components/CategoryList";
 import './AddCategory.css';
 
-
 export default function ManageCategories({url}) {
   const [newCategory, setNewCategory] = useState("");
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -55,7 +54,6 @@ export default function ManageCategories({url}) {
         </div> 
         <button className="button" onClick={() => setAddingCategory(false)}>Peruuta</button>
         <button className="button">Tallenna</button>
-        
       </form>
       </div>
       </>

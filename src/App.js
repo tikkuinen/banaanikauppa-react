@@ -14,10 +14,9 @@ import AddCategory from './pages/AddCategory';
 const URL = 'http://localhost/banaanikauppa-php/';
 
 function App() {
-  // lifting state up, jotta kaikki voi käyttää alaspäin ostoskorin komponenttia
   const [cart, setCart] = useState([]);
 
-  // tämä estää ostoskorin tyhjenemisen kun sivu ladataan uudelleen
+  // estää ostoskorin tyhjenemisen kun sivu ladataan uudelleen
   useEffect(() => {
     if ('cart' in localStorage) {
       setCart(JSON.parse(localStorage.getItem('cart')));

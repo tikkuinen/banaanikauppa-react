@@ -9,7 +9,7 @@ export default function Carousel({url}) {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    axios.get(url + 'products/getrandom.php')
+    axios.get(url + 'products/getitems.php')
       .then((response) => {
         const json = response.data;
         setProduct(json);
@@ -20,22 +20,22 @@ export default function Carousel({url}) {
   
   const handleDragStart = (e) => e.preventDefault();
 
-  const responsive = {
-    0: {
-        items: 1
-    },
-    568: {
-        items: 2
-    },
-    1024: {
-        items: 3
-    },
-  };
+  // const responsive = {
+  //   0: {
+  //       items: 1
+  //   },
+  //   568: {
+  //       items: 2
+  //   },
+  //   1024: {
+  //       items: 3
+  //   },
+  // };
 
   const items = product.map(item => (
     <div className='item'>
       <Link to={'../product/' + item.product_id}>
-      <img src={url + 'images/' + item.image} alt="kuva" className='rounded mx-auto d-block' onDragStart={handleDragStart} role="presentation" />
+      <img src={url + 'images/' + item.image} alt="kuva" onDragStart={handleDragStart} role="presentation" />
       </Link>
       <div>
         {item.artist}
@@ -54,11 +54,11 @@ export default function Carousel({url}) {
         autoPlay={true}
         autoPlayInterval={2000}
         infinite={true}
-        paddingLeft={0}
-        paddingRight={0}
-        responsive={responsive}
+        // paddingLeft={0}
+        // paddingRight={0}
+        // responsive={responsive}
         disableButtonsControls={true}
-        controlsStrategy={"alternate"}
+        // controlsStrategy={"alternate"}
         />
       </div>
   );

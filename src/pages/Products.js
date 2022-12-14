@@ -40,16 +40,16 @@ export default function Products({url, addToCart}) {
       })
   }, [params])
 
-  // useEffect(() => {
-  //   axios.get(url + 'products/getproducts.php/' + params.categoryId)
-  //     .then((response) => {
-  //       const json = response.data;
-  //       setProducts(json.products);
-  //       setCategory(json.category);
-  //     }).catch(error => {
-  //       alert(error.response === undefined ? error : error.response.data.error);
-  //     })
-  // }, [params])
+  useEffect(() => {
+    axios.get(url + 'products/getproducts.php/' + params.categoryId)
+      .then((response) => {
+        const json = response.data;
+        setProducts(json.products);
+        setCategory(json.category);
+      }).catch(error => {
+        alert(error.response === undefined ? error : error.response.data.error);
+      })
+  }, [params])
   
   return (  
     <div id='products' className='row' >

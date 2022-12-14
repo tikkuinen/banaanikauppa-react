@@ -2,7 +2,6 @@ import React,{useState,useEffect} from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import './Order.css';
-//import { createRef } from 'react/cjs/react.production.min';
 
 export default function Order({url,cart,removeFromCart,updateAmount, removeAll}) {
   const [inputs,_] = useState([]);
@@ -76,14 +75,18 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
                   <td>
                     <input type="number" ref={inputs[index]} style={{width: '60px'}} value={product.amount} onChange={e => changeAmount(e,product,index)} />
                   </td>
-                  <td><button type="button" className="btn-close" aria-label="Close" onClick={() => removeFromCart(product)}></button></td>
+                  <td>
+                    <button type="button" className="btn-close" aria-label="Close" onClick={() => removeFromCart(product)}></button>
+                  </td>
                 </tr>
               )
               })}
             <tr key={uuid()}>
               <td></td>
               <td>{sum.toFixed(2)} €</td>
-              <td><button type="button" id="empty" className="btn btn-dark" onClick={() => removeAll()}>Tyhjennä</button></td>
+              <td>
+                <button type="button" id="empty" className="btn btn-dark" onClick={() => removeAll()}>Tyhjennä</button>
+                </td>
               <td></td>
             </tr>
           </tbody>

@@ -1,10 +1,8 @@
 .table{
-
     font-family: 'Courier New', Courier, monospace; 
 }
 
 .form-group{
-
     font-family: 'Courier New', Courier, monospace; 
 }
 
@@ -16,7 +14,6 @@
     margin-top: 1em;
     margin-bottom: 10em;
 }
-
 
 #empty {
     background-color:#1d5338;
