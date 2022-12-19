@@ -42,7 +42,9 @@ function App() {
   }
 
   function removeAll() {
-    setCart([]);
+    const emptyCart = [];
+    setCart(emptyCart);
+    localStorage.setItem('cart',JSON.stringify(emptyCart));
   }
 
   function updateAmount(amount,product) {
