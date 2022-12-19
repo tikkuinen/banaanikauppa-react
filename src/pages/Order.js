@@ -30,6 +30,11 @@ export default function Order({url,cart,removeFromCart,updateAmount, removeAll})
   function order(e) {
     e.preventDefault();
 
+    if ((firstname === '') || (lastname === '') || (address === '') || (zip === '') || (city === '') || (telnro === '')) {
+      alert("Täytä kaikki kentät!")
+      return;
+    }
+    
     const json = JSON.stringify({
       firstname: firstname,
       lastname: lastname,
