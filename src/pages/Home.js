@@ -20,7 +20,7 @@ export default function Home({url}) {
   return (
     <>
       <div className='text'>
-        <h1>Tervetuloa Suomen suosituimpaan käytettyjen cd- levyjen verkkokauppaan!</h1>
+        <h1>Tervetuloa Suomen suosituimpaan käytettyjen CD-levyjen verkkokauppaan!</h1>
       </div>
       <Carousel url={url}/>
       <div className='napit'>
