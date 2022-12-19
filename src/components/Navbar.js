@@ -26,6 +26,7 @@ export default function Navbar({url,cart}) {
     if (e.charCode === 13) {
       e.preventDefault();
       navigate('/search/' + search);
+      setSearch('');
     }
   }
 
