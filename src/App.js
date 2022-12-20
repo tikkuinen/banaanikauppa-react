@@ -1,3 +1,4 @@
+import './App.css';
 import {Routes, Route} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
